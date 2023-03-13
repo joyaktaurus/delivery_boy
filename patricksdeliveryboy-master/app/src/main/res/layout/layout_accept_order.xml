@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/accept_order_top_bg_black"
+    android:clickable="true"
+    >
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_72"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/accept_order_top_bg"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_new_order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/new_order_request"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/dp_56"
+        android:layout_marginTop="@dimen/dp_20"
+        app:customFontThickness="regular"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_order_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4368638 4129 "
+        android:textColor="@color/colorYellow"
+        android:textSize="@dimen/sp_17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_new_order"
+        android:layout_marginStart="@dimen/dp_56"
+        android:layout_marginTop="@dimen/dp_6"
+        app:customFontThickness="medium"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_commission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\u20B925"
+        android:textColor="@color/colorGreen1"
+        app:layout_constraintTop_toTopOf="@id/top_view"
+        app:layout_constraintBottom_toBottomOf="@id/top_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/sp_26"
+        app:customFontThickness="medium"
+        android:layout_marginEnd="@dimen/dp_43"
+        android:background="@drawable/amount_bg_green"
+        />
+
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_sellers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/dp_10"
+                />
+
+    <View
+        android:id="@+id/view_divide1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/colorBlack3"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_sellers"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_53"
+        android:layout_marginEnd="@dimen/dp_43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2.5KM"
+        android:textColor="@color/colorYellow"
+        android:textSize="@dimen/sp_12"
+        app:customFontThickness="medium"
+        app:layout_constraintTop_toBottomOf="@+id/view_divide1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dp_55"
+        android:layout_marginTop="@dimen/dp_7"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_delivery_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  35 Min to Deliver"
+        android:textColor="@color/colorYellow"
+        android:textSize="@dimen/sp_12"
+        app:customFontThickness="medium"
+        app:layout_constraintTop_toBottomOf="@+id/view_divide1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/dp_56"
+        android:layout_marginTop="@dimen/dp_7"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_call_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/call"
+        android:textColor="@color/colorBlue2"
+        android:textSize="@dimen/sp_13"
+        app:customFontThickness="medium"
+        app:layout_constraintTop_toBottomOf="@+id/view_divide1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dp_55"
+        android:layout_marginTop="@dimen/dp_7"
+        android:drawableStart="@drawable/ic_phone"
+        android:visibility="gone"
+        android:drawablePadding="@dimen/dp_13"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/but_accept_order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/accept_button_bg"
+        android:text="@string/accept_order"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_delivery_time"
+        android:layout_marginStart="@dimen/dp_36"
+        android:layout_marginEnd="@dimen/dp_36"
+        android:layout_marginTop="@dimen/dp_17"
+        app:layout_constraintBottom_toTopOf="@+id/but_reject_order"
+        android:layout_marginBottom="@dimen/dp_18"
+        />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/but_reject_order"
+                android:layout_width="@dimen/dp_95"
+                android:layout_height="@dimen/dp_31"
+                android:background="@drawable/reject_order_bg"
+                android:text="@string/reject_order"
+                android:textAllCaps="false"
+                android:textColor="@color/colorRed1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/dp_13"
+                android:textSize="@dimen/sp_9"
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_155"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_28"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back"
+        android:padding="@dimen/dp_6"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_profile"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_28"
+        android:layout_marginTop="@dimen/dp_10"
+        android:src="@drawable/profile_pic"
+        app:civ_border_color="#fed330"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_back" />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_wish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_21"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="Good Morning"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_12"
+        app:customFontThickness="regular"
+        app:layout_constraintStart_toEndOf="@+id/img_profile"
+        app:layout_constraintTop_toBottomOf="@+id/img_back" />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_profile_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_21"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="Elliott Christensen"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_18"
+        app:customFontThickness="medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_profile"
+        app:layout_constraintTop_toBottomOf="@+id/txt_wish" />
+</androidx.constraintlayout.widget.ConstraintLayout>

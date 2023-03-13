@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="dashboardDetail"
+            type="app.com.patricksdeliveryboy.models.DashboardResponse" />
+        <variable
+            name="userProfile"
+            type="app.com.patricksdeliveryboy.models.ProfileResponseModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--<fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="match_parent"
+        />
+
+    <View
+        android:id="@+id/masked_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        />-->
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_220"
+        android:background="@drawable/home_top_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_23"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_handburger"
+        android:padding="@dimen/dp_6"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_23"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_notification" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_profile"
+        android:layout_width="@dimen/dp_46"
+        android:layout_height="@dimen/dp_46"
+        android:layout_marginStart="@dimen/dp_23"
+        android:layout_marginTop="@dimen/dp_15"
+        android:padding="@dimen/dp_6"
+        android:src="@drawable/profile_pic"
+        app:civ_border_color="#fed330"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_menu" />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_wish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_21"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="Good Morning"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_12"
+        app:customFontThickness="regular"
+        app:layout_constraintStart_toEndOf="@+id/img_profile"
+        app:layout_constraintTop_toBottomOf="@+id/img_menu" />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_profile_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_21"
+        android:layout_marginTop="@dimen/dp_9"
+        android:text="@{userProfile.data.deliveryBoyName}"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_18"
+        app:customFontThickness="medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_profile"
+        app:layout_constraintTop_toBottomOf="@+id/txt_wish" />
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="@dimen/dp_21"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_18"
+        android:layout_marginBottom="@dimen/dp_23"
+        android:background="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_profile"
+        app:layout_constraintTop_toBottomOf="@+id/txt_profile_name" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_wallet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_19"
+        android:layout_marginEnd="@dimen/dp_8"
+        app:layout_constraintStart_toStartOf="@+id/view_divider"
+        app:layout_constraintTop_toBottomOf="@+id/view_divider"
+        app:srcCompat="@drawable/ic_wallet" />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_rs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_11"
+        android:layout_marginTop="@dimen/dp_19"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:text="@string/rs"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_14"
+        app:customFontThickness="medium"
+        app:layout_constraintStart_toEndOf="@+id/img_wallet"
+        app:layout_constraintTop_toBottomOf="@+id/view_divider" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_19"
+        android:layout_marginEnd="@dimen/dp_11"
+        app:layout_constraintEnd_toStartOf="@+id/txt_time"
+        app:layout_constraintTop_toBottomOf="@+id/view_divider"
+        app:srcCompat="@drawable/ic_clock" />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_19"
+        android:layout_marginEnd="@dimen/dp_3"
+        android:text="08:35"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_14"
+        app:customFontThickness="medium"
+        app:layout_constraintEnd_toStartOf="@+id/txt_time_subscript"
+        app:layout_constraintTop_toBottomOf="@+id/view_divider" />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_time_subscript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:text="Min"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_9"
+        app:customFontThickness="regular"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_time"
+        app:layout_constraintEnd_toEndOf="@+id/view_divider"
+        app:layout_constraintTop_toTopOf="@+id/txt_time" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_deliveries"
+        android:layout_width="@dimen/dp_102"
+        android:layout_height="@dimen/dp_105"
+        android:layout_marginStart="@dimen/dp_12"
+        app:cardCornerRadius="@dimen/dp_20"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/card_earnings"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_deliveries"
+                android:layout_width="@dimen/dp_29"
+                android:layout_height="@dimen/dp_29"
+                android:background="@drawable/deliveries_bg"
+                app:srcCompat="@drawable/ic_shopping_bags"
+                android:padding="@dimen/dp_7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_6"
+                />
+
+            <app.com.patricksdeliveryboy.view.CustomTextView
+                android:id="@+id/txt_delivery_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{dashboardDetail.data.noOfTodaysDeliveries.toString()}"
+                android:textSize="@dimen/sp_23"
+                app:customFontThickness="medium"
+                app:layout_constraintTop_toBottomOf="@+id/img_deliveries"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textColor="@color/colorBlue2"
+                />
+
+            <app.com.patricksdeliveryboy.view.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/todays_deliveries"
+                android:textSize="@dimen/sp_8"
+                app:customFontThickness="light"
+                app:layout_constraintTop_toBottomOf="@+id/txt_delivery_no"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_6"
+                android:textColor="@color/colorBlack"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_earnings"
+        android:layout_width="@dimen/dp_102"
+        android:layout_height="@dimen/dp_105"
+        app:cardCornerRadius="@dimen/dp_20"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/card_cash"
+
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_deliveries"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.371" >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_earnings"
+            android:layout_width="@dimen/dp_29"
+            android:layout_height="@dimen/dp_29"
+            android:background="@drawable/earnings_bg"
+            app:srcCompat="@drawable/ic_doller_white"
+            android:padding="@dimen/dp_7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_6"
+            />
+
+
+            <app.com.patricksdeliveryboy.view.CustomTextView
+                android:id="@+id/txt_earnings_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\u20B9"
+                android:textSize="@dimen/sp_18"
+                app:customFontThickness="medium"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_earnings"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textColor="@color/colorGreen"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_earnings"
+                />
+        <app.com.patricksdeliveryboy.view.CustomTextView
+            android:id="@+id/txt_earnings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dashboardDetail.data.todayEarnedAmount.toString()}"
+            android:textSize="@dimen/sp_23"
+            app:customFontThickness="medium"
+            app:layout_constraintTop_toBottomOf="@+id/img_earnings"
+            app:layout_constraintStart_toEndOf="@+id/txt_earnings_prefix"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/colorGreen"
+            />
+
+        <app.com.patricksdeliveryboy.view.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todays_earnings"
+            android:textSize="@dimen/sp_8"
+            app:customFontThickness="light"
+            app:layout_constraintTop_toBottomOf="@+id/txt_earnings"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_6"
+            android:textColor="@color/colorBlack"
+            />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_cash"
+        android:layout_width="@dimen/dp_102"
+        android:layout_height="@dimen/dp_105"
+        app:cardCornerRadius="@dimen/dp_20"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_earnings"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        android:layout_marginEnd="@dimen/dp_12"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_cash"
+            android:layout_width="@dimen/dp_29"
+            android:layout_height="@dimen/dp_29"
+            android:background="@drawable/cash_bg"
+            app:srcCompat="@drawable/ic_wallet"
+            android:padding="@dimen/dp_7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_6"
+            />
+
+            <app.com.patricksdeliveryboy.view.CustomTextView
+                android:id="@+id/txt_cash_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\u20B9"
+                android:textSize="@dimen/sp_18"
+                app:customFontThickness="medium"
+                app:layout_constraintBottom_toBottomOf="@+id/img_cash"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textColor="@color/colorRed"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_cash"
+                />
+
+            <app.com.patricksdeliveryboy.view.CustomTextView
+                android:id="@+id/txt_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{dashboardDetail.data.cashInHand.toString()}"
+                android:textSize="@dimen/sp_23"
+                app:customFontThickness="medium"
+                app:layout_constraintTop_toBottomOf="@+id/img_cash"
+                app:layout_constraintStart_toEndOf="@+id/txt_cash_prefix"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textColor="@color/colorRed"
+                />
+
+            <app.com.patricksdeliveryboy.view.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cash_in_hand"
+                android:textSize="@dimen/sp_8"
+                app:customFontThickness="light"
+                app:layout_constraintTop_toBottomOf="@+id/txt_cash"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_6"
+                android:textColor="@color/colorBlack"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/searchOrderRipple"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:rb_color="@color/colorPrimary"
+        app:rb_radius="@dimen/dp_32"
+        app:rb_rippleAmount="4"
+        app:rb_duration="3000"
+        app:rb_scale="6"
+        android:visibility="gone"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dp_90"
+            android:layout_height="@dimen/dp_90"
+            app:srcCompat="@drawable/ic_shopping_bag"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shopping_bag_bg"
+            android:padding="@dimen/dp_18"
+            />
+    </com.skyfishjy.library.RippleBackground>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startDuty"
+        android:layout_width="@dimen/dp_180"
+        android:layout_height="@dimen/dp_60"
+        android:layout_centerInParent="true"
+        android:text="@string/start_duty"
+        android:background="@drawable/bg_button_duty"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_earnings"
+        />
+
+    <include
+        android:id="@+id/view_weekly_earnings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        layout="@layout/weekly_earnings_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_deliveries"
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginTop="@dimen/dp_10"
+        android:visibility="gone"
+       />
+
+    <!--<include
+        android:id="@+id/view_accept_order"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        layout="@layout/layout_accept_order"
+        app:layout_constraintBottom_toTopOf="@+id/but_reject_order"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barrier"
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginStart="@dimen/dp_13"
+        android:layout_marginEnd="@dimen/dp_13"
+        android:layout_marginTop="@dimen/dp_2"
+        android:layout_marginBottom="@dimen/dp_1"
+        android:visibility="gone"
+        />-->
+
+    <!--<include
+        android:id="@+id/view_pick_complete"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        layout="@layout/layout_pickp_complete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barrier"
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginStart="@dimen/dp_13"
+        android:layout_marginEnd="@dimen/dp_13"
+        android:visibility="gone"
+        />
+
+    <include
+        android:id="@+id/view_reached"
+        layout="@layout/layout_reached"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barrier"
+        android:layout_marginStart="@dimen/dp_13"
+        android:layout_marginEnd="@dimen/dp_13"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/dp_2"
+        />
+
+    <include
+        android:id="@+id/view_delivered"
+        layout="@layout/layout_delivery_complete"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barrier"
+        android:layout_marginStart="@dimen/dp_13"
+        android:layout_marginEnd="@dimen/dp_13"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/dp_2"
+        />-->
+
+    <include
+        android:id="@+id/view_shift_details"
+        layout="@layout/layout_shift_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_earnings"
+        android:layout_marginTop="@dimen/dp_10"
+        android:visibility="gone"
+        app:layout_constraintVertical_bias="1.0"
+        />
+
+    <include
+        android:id="@+id/view_report_issue"
+        layout="@layout/layout_report_issue"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_earnings"
+        android:layout_marginTop="@dimen/dp_10"
+
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:visibility="gone"
+        />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/but_reject_order"
+        android:layout_width="@dimen/dp_95"
+        android:layout_height="@dimen/dp_31"
+        android:background="@drawable/reject_order_bg"
+        android:text="@string/reject_order"
+        android:textAllCaps="false"
+        android:textColor="@color/colorRed1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/dp_13"
+        android:textSize="@dimen/sp_9"
+        android:visibility="gone"
+        />
+
+
+    <FrameLayout
+        android:id="@+id/loading_lottie"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#6D000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        android:elevation="20dp"
+        android:clickable="true">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_rounded_white">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_view"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_fileName="loading.json" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="card_earnings"
+        />
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="card_cash,card_deliveries,card_earnings"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

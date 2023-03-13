@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTextView">
+        <attr name="customFontThickness" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="WacButton">
+        <attr name="buttonFontThickness" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="WacEditText">
+        <attr name="editFontThickness" format="string"/>
+    </declare-styleable>
+</resources>

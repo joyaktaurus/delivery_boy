@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="data"
+            type="app.com.patricksdeliveryboy.models.DataItemOrder" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    >
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="@{data.name}"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_11"
+        app:customFontThickness="regular"
+        app:layout_constraintEnd_toStartOf="@+id/txt_qty"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pickup_place_name" />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='@{data.quantity.toString() +"X"}'
+        android:textColor="@color/colorGreen"
+        app:layout_constraintEnd_toStartOf="@+id/txt_rate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txt_item_name"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/dp_5"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_29"
+        android:text='@{"\u20B9"+data.price.toString()}'
+        android:textColor="@color/colorRed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txt_qty"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

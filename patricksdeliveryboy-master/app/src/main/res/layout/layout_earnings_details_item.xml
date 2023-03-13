@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBlack2">
+
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorGrey"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coffee Tribe"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_12"
+        app:customFontThickness="medium"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@+id/view_top"
+        android:layout_marginTop="@dimen/dp_15"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9:00 AM"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_8"
+        app:customFontThickness="regular"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@+id/txt_shop_name"
+        android:layout_marginTop="@dimen/dp_6"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_rs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\u20B9 "
+        android:textColor="@color/colorYellow"
+        android:textSize="@dimen/sp_11"
+        app:customFontThickness="medium"
+        app:layout_constraintTop_toBottomOf="@+id/view_top"
+        android:layout_marginTop="@dimen/dp_15"
+        app:layout_constraintStart_toStartOf="@+id/txt_delivery_status"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="563"
+        android:textColor="@color/colorYellow"
+        android:textSize="@dimen/sp_15"
+        app:customFontThickness="medium"
+        app:layout_constraintTop_toBottomOf="@+id/view_top"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginEnd="@dimen/dp_35"
+        app:layout_constraintStart_toEndOf="@+id/txt_rs"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_delivery_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivered"
+        app:layout_constraintTop_toBottomOf="@+id/txt_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/sp_10"
+        android:textColor="@color/colorGreen1"
+        android:layout_marginEnd="@dimen/dp_25"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/view_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_divider_right_cut"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toBottomOf="@+id/txt_time"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/white_bg_side_menu"
+    >
+    <View
+        android:id="@+id/report_top_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_72"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/weekly_earnings_top_bg"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_patrick_store"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/patrick_store_ive"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/dp_28"
+        android:layout_marginTop="@dimen/dp_20"
+        app:customFontThickness="regular"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_this_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_issue"
+        android:textColor="@color/colorYellow"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_patrick_store"
+        android:layout_marginStart="@dimen/dp_28"
+        android:layout_marginTop="@dimen/dp_6"
+        app:customFontThickness="medium"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_chat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/report_top_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_suggestions"
+        android:background="@color/colorWhite"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_suggestions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/edt_msg"
+        app:layout_constraintStart_toEndOf="@+id/img_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/dp_7"
+        android:layout_marginBottom="@dimen/dp_9"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_left"
+        app:layout_constraintBottom_toTopOf="@+id/edt_msg"
+        app:layout_constraintStart_toStartOf="@+id/edt_msg"
+        android:layout_marginBottom="@dimen/dp_9"
+        />
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_send"
+        android:layout_width="@dimen/dp_33"
+        android:layout_height="@dimen/dp_33"
+        android:background="@drawable/green_dot"
+        app:srcCompat="@drawable/ic_send"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_msg"
+        app:layout_constraintTop_toTopOf="@+id/edt_msg"
+        app:layout_constraintEnd_toEndOf="@+id/edt_msg"
+        app:layout_constraintStart_toEndOf="@+id/edt_msg"
+        android:elevation="@dimen/dp_20"
+        />
+    
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_msg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_83"
+        android:background="@drawable/type_msg_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/dp_18"
+        android:layout_marginEnd="@dimen/dp_28"
+        android:paddingStart="@dimen/dp_10"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

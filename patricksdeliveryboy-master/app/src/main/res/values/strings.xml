@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">PatricksDeliveryBoy</string>
+    <string name="welcome_back">WELCOME\nBACK</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password"><u>Forgot Password</u></string>
+    <string name="create_new_account"><u>Create New Account</u></string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="logout">Log Out</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="rs">\u20B9 568</string>
+    <string name="weekly_earning_details">weekly earning details</string>
+    <string name="patrick_store_live">Patrick Store Live</string>
+    <string name="report_issue">Report Issue</string>
+    <string name="end_duty">End Duty</string>
+    <string name="profile">Profile</string>
+    <string name="todays_deliveries">Today\'s Deliveries</string>
+    <string name="todays_earnings">Today\'s Earnings</string>
+    <string name="cash_in_hand">Cash in Hands</string>
+    <string name="start_duty">Start Duty</string>
+    <string name="weekly_earning_details1">WEEKLY EARNING DETAILS</string>
+    <string name="this_week">This Week</string>
+    <string name="new_order_request">New Order Request</string>
+    <string name="landmark">LANDMARK            Medical College </string>
+    <string name="accept_order">Accept Order</string>
+    <string name="reject_order">Reject Order</string>
+    <string name="call">CALL</string>
+    <string name="reached_picked_location">REACHED PICKUP LOCATION </string>
+    <string name="confirm_order">Confirm orders</string>
+    <string name="no_payment_needed">No payment needed</string>
+    <string name="pickup_complete">PICKUP Complete</string>
+    <string name="reached">Reached</string>
+    <string name="log_out">Log Out</string>
+    <string name="shift_details">Shift Details</string>
+    <string name="in">IN</string>
+    <string name="out">OUT</string>
+    <string name="patrick_store_ive">Patrick Store Live</string>
+    <string name="delivery_complete">Delivery Complete</string>
+    <string name="your_order_completed">Your Order Completed</string>
+    <string name="you_earned">You Earned for this Order</string>
+    <string name="thank_you">Thank YOU</string>
+    <string name="mobile">Mobile</string>
+    <string name="patrik_id">Patrik ID</string>
+    <string name="joining_date">Joining Date</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

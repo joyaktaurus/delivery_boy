@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_72"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/weekly_earnings_top_bg"
+        android:clickable="true"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_weekly_earnings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/weekly_earning_details1"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/dp_28"
+        android:layout_marginTop="@dimen/dp_20"
+        app:customFontThickness="regular"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_this_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/this_week"
+        android:textColor="@color/colorYellow"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_weekly_earnings"
+        android:layout_marginStart="@dimen/dp_28"
+        android:layout_marginTop="@dimen/dp_6"
+        app:customFontThickness="medium"
+        />
+
+    <app.com.patricksdeliveryboy.view.CustomTextView
+        android:id="@+id/txt_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="July 2nd week"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_6"
+        app:layout_constraintStart_toEndOf="@+id/txt_this_week"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_this_week"
+        android:layout_marginStart="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_6"
+        app:customFontThickness="regular"
+        android:visibility="gone"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_weekly_earnings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/top_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/colorBlack"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
